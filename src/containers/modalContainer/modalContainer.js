@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
-  Alert
+  Alert,
 } from 'react-native';
 import Modal from 'react-native-modal';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -27,7 +27,7 @@ export function ModalContainer(props) {
     title: title,
     description: description,
     date: date,
-    participants: props.participants
+    participants: props.participants,
   };
 
   const onChange = (event, selectedDate) => {
@@ -102,7 +102,7 @@ export function ModalContainer(props) {
                     style={styles.titleInput}
                     placeholder="Title"
                     value={title}
-                    onChangeText={text => setTitle(text)}
+                    onChangeText={(text) => setTitle(text)}
                   />
                 </View>
                 <View style={styles.dateContainer}>
@@ -111,7 +111,7 @@ export function ModalContainer(props) {
                       key={index}
                       style={[
                         styles.dates,
-                        dateIndex === index && { backgroundColor: '#0C07D2' }
+                        dateIndex === index && { backgroundColor: '#0C07D2' },
                       ]}
                       onPress={() => onDateSelect(item, index)}
                     >
@@ -119,11 +119,11 @@ export function ModalContainer(props) {
                         name="calendar-check"
                         size={20}
                         color={dateIndex === index ? '#fff' : '#B4B3CE'}
-                        style={{ marginRight: 5 }}
+                        style={{ marginRight: 2 }}
                       />
                       <Text
                         style={{
-                          color: dateIndex === index ? '#fff' : '#B4B3CE'
+                          color: dateIndex === index ? '#fff' : '#B4B3CE',
                         }}
                       >
                         {item}
@@ -150,7 +150,7 @@ export function ModalContainer(props) {
                     numberOfLines={10}
                     multiline
                     value={description}
-                    onChangeText={text => setDdescription(text)}
+                    onChangeText={(text) => setDdescription(text)}
                   />
                 </View>
               </ScrollView>
